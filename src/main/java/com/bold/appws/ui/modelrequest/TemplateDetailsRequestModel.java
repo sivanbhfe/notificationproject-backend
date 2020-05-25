@@ -11,8 +11,17 @@ public class TemplateDetailsRequestModel {
 	private String incimanageremail;
 	private String starttime;
 	private String endtime;
+	private String notitype;
 
 
+
+	public String getNotitype() {
+		return notitype;
+	}
+
+	public void setNotitype(String notitype) {
+		this.notitype = notitype;
+	}
 
 	public String getPlatform() {
 		return platform;
