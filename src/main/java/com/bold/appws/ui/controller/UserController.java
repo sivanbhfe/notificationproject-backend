@@ -36,17 +36,29 @@ public class UserController {
 		String starttime= templateDetails.getStarttime();
 		String endtime= templateDetails.getEndtime();
 		String notitype=templateDetails.getNotitype();
+		String summary=templateDetails.getSummary();
 		String titlecolor="";
+		String closed="";
+		String stillopen="";
+		String noincimanager="";
 		
+		if (incimanager.isEmpty()) {
+			noincimanager = "display:none";
+		}
 		if (status.equalsIgnoreCase("Open")) {
 			if(notitype.equalsIgnoreCase("outageholiday")) {
 				titlecolor="color:rgb(51, 153, 255)";	
 			} else {
 				titlecolor="color:rgb(255, 0, 0)";
 			}			
+			closed="display:none";
+			
 			} else {
 				titlecolor="color:rgb(76, 153, 0)";
+				stillopen="display:none";
 			}		
+		
+		
 		
 		String htmlbody = "<html>\r\n" + 
 				"<table border=\"1\">\r\n" + 
@@ -70,10 +82,16 @@ public class UserController {
 				"<td style=\"font-family:calibri;font-size:16px\">"+platform+"</td></tr>\r\n" + 
 				"<tr><td style=\"text-align:right;font-family:calibri;font-weight:bold;font-size:18px\" id=\"tableplatform\" >Status</td>\r\n" + 
 				"<td style=\"font-family:calibri;font-size:16px\">"+status+"</td></tr>\r\n" + 
-				"<tr><td style=\"text-align:right;font-family:calibri;font-weight:bold;font-size:18px\" id=\"tableplatform\" >Start time & End time</td>\r\n" + 
+				"<tr style=\""+closed+"\"><td style=\"text-align:right;font-family:calibri;font-weight:bold;font-size:18px;\" id=\"tableplatform\" >Start time & End time</td>\r\n" + 
 				"<td style=\"font-family:calibri;font-size:16px\">"+starttime+" & "+endtime+"</td></tr>\r\n" + 
-				"<tr><td style=\"text-align:right;font-family:calibri;font-weight:bold;font-size:18px\" id=\"tableplatform\" >Incident Manager</td>\r\n" + 
-				"<td style=\"font-family:calibri;font-size:16px\"><a href=\"mailto:"+incimanageremail+"\">"+incimanager+"</td></tr>\r\n" + 
+				"<tr style=\""+stillopen+"\"><td style=\"text-align:right;font-family:calibri;font-weight:bold;font-size:18px;\" id=\"tableplatform\" >Start time</td>\r\n" + 
+				"<td style=\"font-family:calibri;font-size:16px\">"+starttime+"</td></tr>\r\n" + 
+				"<tr style=\""+stillopen+"\"><td style=\"text-align:right;font-family:calibri;font-weight:bold;font-size:18px;\" id=\"tableplatform\" >End time</td>\r\n" + 
+				"<td style=\"font-family:calibri;font-size:16px\">"+endtime+"</td></tr>\r\n" + 
+				"<tr style=\""+noincimanager+"\"><td style=\"text-align:right;font-family:calibri;font-weight:bold;font-size:18px\" id=\"tableplatform\" >Incident Manager</td>\r\n" + 
+				"<td style=\"font-family:calibri;font-size:16px\"><a href=\"mailto:"+incimanageremail+"\">"+incimanager+"</td></tr>\r\n" +
+				"<tr><td style=\"text-align:right;font-family:calibri;font-weight:bold;font-size:18px;\" id=\"tableplatform\" >Summary</td>\r\n" + 
+				"<td style=\"font-family:calibri;font-size:16px\">"+summary+"</td></tr>\r\n" + 
 				"<tr><td colspan=\"2\" style=\"font-family:calibri;font-size:12px\">Please contact  GTO APAC Content Support via reply to this \r\n" + 
 				"<a href=\"mailto:sivabalan.shanmugasiva@lexisnexis.com\">email</a> if you have any queries/concerns.</td></tr>\r\n" + 
 				"<tr><td colspan=\"2\" style=\"font-family:calibri;font-size:14px\">Regards<br/>GTO APAC Content Support<br/>\r\n" + 

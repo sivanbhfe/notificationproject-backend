@@ -12,8 +12,17 @@ public class TemplateDetailsRequestModel {
 	private String starttime;
 	private String endtime;
 	private String notitype;
+	private String summary;
 
 
+
+	public String getSummary() {
+		return summary;
+	}
+
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
 
 	public String getNotitype() {
 		return notitype;
