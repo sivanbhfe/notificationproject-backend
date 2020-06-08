@@ -1,5 +1,6 @@
 package com.bold.appws.ui.modelrequest;
 
+
 public class TemplateDetailsRequestModel {
 	private String title;
 	private String platform;
@@ -111,6 +112,23 @@ public class TemplateDetailsRequestModel {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	
-
+	/*
+	 @Override
+	    public String toString() {
+	        return "TemplateDetailsRequestModel "
+	        		+ "[title=" + this.title + 
+	        		", platform=" + this.platform + 
+	        		", jira=" + this.jira + 
+	        		", servicenow=" + this.servicenow + 
+	        		", webstar=" + this.webstar + 
+	        		", status=" + this.status + 
+	        		", incimanager=" + this.incimanager + 
+	        		", incimanageremail=" + this.incimanageremail + 
+	        		", starttime=" + this.starttime + 
+	        		", endtime=" + this.endtime + 
+	        		", notitype=" + this.notitype + 
+	        		", summary=" + this.summary + 
+	        		"]";
+	    }
+*/
 }
