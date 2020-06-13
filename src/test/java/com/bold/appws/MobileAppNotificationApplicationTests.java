@@ -24,7 +24,7 @@ class MobileAppNotificationApplicationTests {
 	
 //	@Mock
 //	private TemplateDetailsRequestModel templateDetails;
-	
+// testing	
 	@Autowired
     private MockMvc mvc;
 
