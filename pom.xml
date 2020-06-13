@@ -11,6 +11,7 @@
 	<groupId>com.bold.appws</groupId>
 	<artifactId>mobile-app-notification</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>mobile-app-notification</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -23,6 +24,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-tomcat -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-tomcat</artifactId>
+    <version>2.3.0.RELEASE</version>
+</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webflux</artifactId>
@@ -62,10 +69,14 @@
 	</dependencies>
 
 	<build>
+	 <finalName>demo</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+				<war-name>demo</war-name>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
