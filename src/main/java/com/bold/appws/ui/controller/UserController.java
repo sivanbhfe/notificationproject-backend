@@ -20,7 +20,7 @@ import com.bold.appws.ui.modelresponse.TemplateModelResponse;
 import com.bold.appws.ui.service.GenerateTemplateService;
 
 @RestController
-@RequestMapping ("/") //http://localhost:8080/users
+//@RequestMapping ("/") //http://localhost:8080/users
 public class UserController {
 	
 	@Autowired
@@ -35,7 +35,6 @@ public class UserController {
 				String successMessage = generateTemplateService.generateTemplate(templateDetails);
 				System.out.println(successMessage);	
 				return successMessage;
-		
 	}
 	
 }
